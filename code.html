@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pure Phool Makhana - Premium Fox Nuts</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f4e9;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(244,229,186,0.8) 0%, rgba(215,179,99,0.8) 100%);
+        }
+        
+        .benefit-card {
+            transition: transform 0.3s ease;
+            background-color: #fff7e6;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .product-card {
+            transition: all 0.3s ease;
+            background-color: #fff9f0;
+        }
+        
+        .product-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #d7b363;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .recipe-card {
+            perspective: 1000px;
+        }
+        
+        .recipe-inner {
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        
+        .recipe-card:hover .recipe-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .recipe-front, .recipe-back {
+            backface-visibility: hidden;
+            background-color: #fff7e6;
+        }
+        
+        .recipe-back {
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full z-10">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold text-amber-800">Pure Phool Makhana</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-amber-800">Home</a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-amber-800">About</a>
+                    <a href="#benefits" class="nav-link text-gray-700 hover:text-amber-800">Benefits</a>
+                    <a href="#products" class="nav-link text-gray-700 hover:text-amber-800">Products</a>
+                    <a href="#recipes" class="nav-link text-gray-700 hover:text-amber-800">Recipes</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-amber-800">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button class="mobile-menu-button">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-menu hidden md:hidden bg-white">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 text-gray-700 hover:text-amber-800">Home</a>
+                <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-amber-800">About</a>
+                <a href="#benefits" class="block px-3 py-2 text-gray-700 hover:text-amber-800">Benefits</a>
+                <a href="#products" class="block px-3 py-2 text-gray-700 hover:text-amber-800">Products</a>
+                <a href="#recipes" class="block px-3 py-2 text-gray-700 hover:text-amber-800">Recipes</a>
+                <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-amber-800">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-24 hero-gradient">
+        <div class="container mx-auto px-6 py-12 md:py-24">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <h1 class="text-4xl md:text-6xl font-bold text-amber-900 mb-4">Pure, Premium <span class="text-amber-700">Phool Makhana</span></h1>
+                    <p class="text-lg md:text-xl text-gray-700 mb-6">Handpicked from the finest lotus seeds, our organic fox nuts deliver unmatched quality and nutrition.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#products" class="bg-amber-700 hover:bg-amber-800 text-white px-6 py-3 rounded-full transition duration-300">Our Products</a>
+                        <a href="#benefits" class="border-2 border-amber-700 text-amber-700 hover:bg-amber-50 px-6 py-3 rounded-full transition duration-300">Health Benefits</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a6a37099-c78d-4bf1-bfa2-49c4d21a3227.png" alt="Close-up of premium quality Phool Makhana in a traditional brass bowl, beautifully lit with golden light" class="rounded-lg shadow-xl transform rotate-3 hover:rotate-0 transition duration-500">
+                        <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-lg shadow-lg z-10">
+                            <div class="text-center">
+                                <span class="text-amber-700 font-bold text-lg block">100% Organic</span>
+                                <span class="text-gray-600 text-sm">Certified</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-amber-800 mb-4">What is Phool Makhana?</h2>
+                <div class="w-20 h-1 bg-amber-600 mx-auto"></div>
+            </div>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c6dfbdd1-a397-4f47-942f-3268f14da5c6.png" alt="Fresh lotus flowers in a pond with seeds being harvested in traditional manner by workers in rural India" class="rounded-lg shadow-lg">
+                </div>
+                <div class="md:w-1/2 md:pl-12">
+                    <p class="text-gray-700 mb-4 leading-relaxed">Phool Makhana, also known as fox nuts or lotus seeds, are the seeds of the Euryale ferox plant that grows in ponds and wetlands across India. These seeds have been a staple in Ayurvedic medicine and Indian cuisine for centuries.</p>
+                    <p class="text-gray-700 mb-4 leading-relaxed">At Pure Phool Makhana, we source these seeds directly from farmers who follow traditional harvesting methods and modern quality standards to ensure you get the purest, most nutritious fox nuts available.</p>
+                    <div class="bg-amber-50 p-6 rounded-lg border-l-4 border-amber-600">
+                        <p class="text-gray-700 italic">"Our Phool Makhana are hand-processed without any artificial additives or preservatives, maintaining their natural goodness from harvest to packaging."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-16 bg-amber-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-amber-800 mb-4">Health Benefits</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Discover why Phool Makhana has been cherished for centuries in traditional medicine</p>
+                <div class="w-20 h-1 bg-amber-600 mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Benefit Card 1 -->
+                <div class="benefit-card rounded-lg p-6 shadow-md">
+                    <div class="text-amber-700 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-amber-800 mb-2">Rich in Nutrients</h3>
+                    <p class="text-gray-700">Packed with protein, fiber, magnesium, potassium, phosphorus, and iron while being low in calories.</p>
+                </div>
+                
+                <!-- Benefit Card 2 -->
+                <div class="benefit-card rounded-lg p-6 shadow-md">
+                    <div class="text-amber-700 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-amber-800 mb-2">Weight Management</h3>
+                    <p class="text-gray-700">High fiber content helps control hunger pangs and promotes a feeling of fullness for longer.</p>
+                </div>
+                
+                <!-- Benefit Card 3 -->
+                <div class="benefit-card rounded-lg p-6 shadow-md">
+                    <div class="text-amber-700 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-amber-800 mb-2">Energy Booster</h3>
+                    <p class="text-gray-700">Provides sustained energy release without sugar spikes, perfect for athletes and active individuals.</p>
+                </div>
+                
+                <!-- Benefit Card 4 -->
+                <div class="benefit-card rounded-lg p-6 shadow-md">
+                    <div class="text-amber-700 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-amber-800 mb-2">Blood Pressure Control</h3>
+                    <p class="text-gray-700">Contains magnesium and potassium that help regulate blood pressure levels naturally.</p>
+                </div>
+                
+                <!-- Benefit Card 5 -->
+                <div class="benefit-card rounded-lg p-6 shadow-md">
+                    <div class="text-amber-700 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-amber-800 mb-2">Antioxidant Properties</h3>
+                    <p class="text-gray-700">Loaded with antioxidants that help combat free radicals and support overall cellular health.</p>
+                </div>
+                
+                <!-- Benefit Card 6 -->
+                <div class="benefit-card rounded-lg p-6 shadow-md">
+                    <div class="text-amber-700 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-amber-800 mb-2">Joint Health</h3>
+                    <p class="text-gray-700">Anti-inflammatory properties help reduce joint pain and stiffness, particularly beneficial for arthritis.</p>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="#contact" class="inline-block bg-amber-700 hover:bg-amber-800 text-white px-6 py-3 rounded-full transition duration-300">Learn More About Benefits</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-amber-800 mb-4">Our Premium Products</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Carefully processed to retain maximum nutrition and taste</p>
+                <div class="w-20 h-1 bg-amber-600 mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Product Card 1 -->
+                <div class="product-card rounded-lg overflow-hidden shadow-md">
+                    <div class="relative">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/432fcce3-a6dc-4c4b-a612-772f682f4e36.png" alt="Pure white Phool Makhana in a glass jar with wooden lid displayed on a wooden background" class="w-full h-64 object-cover">
+                        <div class="absolute top-2 right-2 bg-amber-700 text-white px-3 py-1 rounded-full text-xs font-semibold">Bestseller</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-amber-800 mb-2">Organic Plain Phool Makhana</h3>
+                        <p class="text-gray-600 mb-4">Pure, unsalted fox nuts perfect for cooking, roasting or making desserts</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-amber-700 font-bold">₹250 / 500g</span>
+                            <button class="bg-amber-100 hover:bg-amber-200 text-amber-800 px-4 py-2 rounded-full text-sm font-medium">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product Card 2 -->
+                <div class="product-card rounded-lg overflow-hidden shadow-md">
+                    <div class="relative">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c88695e8-d44e-415a-aea8-d43a00dbf1b7.png" alt="Assorted flavored Phool Makhana in colorful small bowls arranged in a circle" class="w-full h-64 object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-amber-800 mb-2">Flavored Phool Makhana Set</h3>
+                        <p class="text-gray-600 mb-4">Assorted flavors - Masala, Peri Peri, Cheese and Roasted</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-amber-700 font-bold">₹400 / Set of 4</span>
+                            <button class="bg-amber-100 hover:bg-amber-200 text-amber-800 px-4 py-2 rounded-full text-sm font-medium">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product Card 3 -->
+                <div class="product-card rounded-lg overflow-hidden shadow-md">
+                    <div class="relative">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/5319ff9f-719f-4783-be2b-ad8b856a9478.png" alt="Phool Makhana powder in traditional Indian brass container with spoon" class="w-full h-64 object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-amber-800 mb-2">Phool Makhana Powder</h3>
+                        <p class="text-gray-600 mb-4">Finely ground fox nuts perfect for smoothies, milkshakes and baby food</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-amber-700 font-bold">₹300 / 250g</span>
+                            <button class="bg-amber-100 hover:bg-amber-200 text-amber-800 px-4 py-2 rounded-full text-sm font-medium">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 text-center">
+                <a href="#contact" class="inline-block border-2 border-amber-700 text-amber-700 hover:bg-amber-50 px-6 py-3 rounded-full transition duration-300">View All Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recipes Section -->
+    <section id="recipes" class="py-16 bg-amber-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-amber-800 mb-4">Delicious Recipes</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Explore creative ways to enjoy Phool Makhana</p>
+                <div class="w-20 h-1 bg-amber-600 mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Recipe Card 1 -->
+                <div class="recipe-card rounded-lg overflow-hidden">
+                    <div class="recipe-inner relative">
+                        <div class="recipe-front">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/480f0526-d26d-4bd4-b872-a4f79a80b1b2.png" alt="Phool Makhana kheer in traditional Indian bowls garnished with nuts and saffron strands" class="w-full h-64 object-cover">
+                            <div class="p-6 bg-white">
+                                <h3 class="text-xl font-semibold text-amber-800 mb-2">Makhana Kheer</h3>
+                                <p class="text-gray-600 mb-4">Classic Indian dessert made with fox nuts, milk and aromatic spices</p>
+                                <button class="view-recipe-btn bg-amber-100 hover:bg-amber-200 text-amber-800 px-4 py-2 rounded-full text-sm font-medium" data-recipe="1">View Recipe</button>
+                            </div>
+                        </div>
+                        <div class="recipe-back absolute top-0 left-0 w-full h-full p-6">
+                            <h3 class="text-xl font-semibold text-amber-800 mb-2">Makhana Kheer Recipe</h3>
+                            <div class="mb-4">
+                                <h4 class="font-medium text-amber-700 mb-2">Ingredients:</h4>
+                                <ul class="list-disc pl-5 text-gray-700 text-sm">
+                                    <li>1 cup Pure Phool Makhana</li>
+                                    <li>4 cups milk</li>
+                                    <li>1/2 cup sugar</li>
+                                    <li>1/4 tsp cardamom powder</li>
+                                    <li>10-12 saffron strands</li>
+                                    <li>2 tbsp chopped nuts</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-amber-700 mb-2">Method:</h4>
+                                <ol class="list-decimal pl-5 text-gray-700 text-sm">
+                                    <li>Dry roast makhana until crisp, then coarsely grind</li>
+                                    <li>Boil milk with saffron till reduced slightly</li>
+                                    <li>Add sugar and cardamom powder</li>
+                                    <li>Add crushed makhana and simmer for 5 minutes</li>
+                                    <li>Garnish with nuts and serve chilled</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Recipe Card 2 -->
+                <div class="recipe-card rounded-lg overflow-hidden">
+                    <div class="recipe-inner relative">
+                        <div class="recipe-front">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/405d3df6-17f4-4785-942f-b0966355783a.png" alt="Spicy roasted Phool Makhana snack in a wooden bowl with fresh herbs" class="w-full h-64 object-cover">
+                            <div class="p-6 bg-white">
+                                <h3 class="text-xl font-semibold text-amber-800 mb-2">Roasted Makhana</h3>
+                                <p class="text-gray-600 mb-4">Crunchy, spicy snack perfect for healthy munching</p>
+                                <button class="view-recipe-btn bg-amber-100 hover:bg-amber-200 text-amber-800 px-4 py-2 rounded-full text-sm font-medium" data-recipe="2">View Recipe</button>
+                            </div>
+                        </div>
+                        <div class="recipe-back absolute top-0 left-0 w-full h-full p-6">
+                            <h3 class="text-xl font-semibold text-amber-800 mb-2">Roasted Makhana Recipe</h3>
+                            <div class="mb-4">
+                                <h4 class="font-medium text-amber-700 mb-2">Ingredients:</h4>
+                                <ul class="list-disc pl-5 text-gray-700 text-sm">
+                                    <li>2 cups Pure Phool Makhana</li>
+                                    <li>1 tbsp ghee</li>
+                                    <li>1/2 tsp black salt</li>
+                                    <li>1/2 tsp roasted cumin powder</li>
+                                    <li>1/4 tsp red chili powder</li>
+                                    <li>1/4 tsp chaat masala</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-amber-700 mb-2">Method:</h4>
+                                <ol class="list-decimal pl-5 text-gray-700 text-sm">
+                                    <li>Heat ghee in a pan on low flame</li>
+                                    <li>Add makhana and roast for 5-7 minutes stirring constantly</li>
+                                    <li>Turn off heat and sprinkle all spices</li>
+                                    <li>Mix well and store in airtight container</li>
+                                    <li>Enjoy within 5-7 days</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <button id="loadMoreRecipes" class="inline-block border-2 border-amber-700 text-amber-700 hover:bg-amber-50 px-6 py-3 rounded-full transition duration-300">Load More Recipes</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-amber-800 mb-4">What Our Customers Say</h2>
+                <div class="w-20 h-1 bg-amber-600 mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card rounded-lg shadow-md p-6 bg-amber-50">
+                    <div class="flex items-center mb-4">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/6d568a8e-7aaf-4724-becc-fa992795b5b5.png" alt="Portrait of Priya Sharma, a satisfied customer from Delhi" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold text-amber-800">Priya Sharma</h4>
+                            <p class="text-gray-600 text-sm">Delhi</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">"Pure Phool Makhana has transformed my evening snack routine. The quality is unmatched - crisp, fresh and perfectly sized. My entire family is hooked!"</p>
+                    <div class="flex mt-4">
+                        <svg class="w-5 h-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg class="w-5 h-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg class="w-5 h-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg class="w-5 h-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg class="w-5 h-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card rounded-lg shadow-md p-6 bg-amber-50">
+                    <div class="flex items-center mb-4">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/5aaf5980-1376-441e-b7f9-6f51d02047c9.png" alt="Portrait of Rajiv Patel, a satisfied customer from Mumbai" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold text-amber-800">Rajiv Patel</h4>
+                            <p class="text-gray-600 text-sm">Mumbai</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">"As a fitness enthusiast, I've tried many protein-rich snacks. Pure Phool Makhana gives me sustained energy without any bloating or digestive issues. Highly recommended!"</p>
+                    <div class="flex mt-4">
+                        <svg class="w-5 h-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg class="w-5 h-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg class="w-5 h-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg class="w-5 h-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg class="w-5 h-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-amber-700 text-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
+                <p class="max-w-2xl mx-auto">Have questions about our products? Want bulk orders? Reach out!</p>
+                <div class="w-20 h-1 bg-white mx-auto"></div>
+            </div>
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <h3 class="text-xl font-semibold mb-4">Contact Information</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-4 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            <div>
+                                <p class="font-medium">Corporate Office</p>
+                                <p>Pure Phool Makhana Pvt. Ltd.</p>
+                                <p>Farmers Market, Bihar 803110</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-4 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                            </svg>
+                            <div>
+                                <p class="font-medium">Call Us At</p>
+                                <p>+91 98765 43210</p>
+                                <p>+91 98765 43211</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-4 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            <div>
+                                <p class="font-medium">Email Us At</p>
+                                <p>hello@purephoolmakhana.com</p>
+                                <p>orders@purephoolmakhana.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <h3 class="text-xl font-semibold mb-4">Follow Us</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-amber-800 hover:bg-amber-900 p-3 rounded-full transition duration-300">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="bg-amber-800 hover:bg-amber-900 p-3 rounded-full transition duration-300">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="bg-amber-800 hover:bg-amber-900 p-3 rounded-full transition duration-300">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 md:pl-12">
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h3 class="text-xl font-semibold text-amber-800 mb-4">Send Us A Message</h3>
+                        <form id="contactForm">
+                            <div class="mb-4">
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="name">Name</label>
+                                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" placeholder="Your Name">
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="email">Email</label>
+                                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" placeholder="Your Email">
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="subject">Subject</label>
+                                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="subject" type="text" placeholder="Subject">
+                            </div>
+                            <div class="mb-6">
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="message">Message</label>
+                                <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="message" rows="4" placeholder="Your Message"></textarea>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <button class="bg-amber-700 hover:bg-amber-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+                                    Send Message
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-amber-900 text-white py-8">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <span class="text-2xl font-bold">Pure Phool Makhana</span>
+                    <p class="text-amber-200 mt-2">Premium Organic Fox Nuts Since 1995</p>
+                </div>
+                <div class="flex flex-col items-center md:items-end">
+                    <div class="flex space-x-6 mb-4">
+                        <a href="#" class="hover:text-amber-300">Home</a>
+                        <a href="#" class="hover:text-amber-300">Products</a>
+                        <a href="#" class="hover:text-amber-300">About</a>
+                        <a href="#" class="hover:text-amber-300">Contact</a>
+                    </div>
+                    <p class="text-amber-200 text-sm">© 2023 Pure Phool Makhana. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.querySelector('.mobile-menu-button');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // Recipe card flipping functionality
+        document.querySelectorAll('.view-recipe-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const recipeCard = this.closest('.recipe-card');
+                recipeCard.querySelector('.recipe-inner').classList.toggle('rotate-180');
+            });
+        });
+        
+        // Load more recipes functionality
+        const loadMoreBtn = document.getElementById('loadMoreRecipes');
+        if(loadMoreBtn) {
+            loadMoreBtn.addEventListener('click', function() {
+                // In a real app, this would fetch more recipes from a server
+                alert('Loading more recipes...');
+            });
+        }
+        
+        // Contact form handling
+        const contactForm = document.getElementById('contactForm');
+        if(contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your message! We will get back to you soon.');
+                contactForm.reset();
+            });
+        }
+    </script>
+</body>
+</html>
+
